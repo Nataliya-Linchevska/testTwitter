@@ -46,10 +46,10 @@
             </objects>
             <point key="canvasLocation" x="32.799999999999997" y="138.98050974512745"/>
         </scene>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="qcn-Sa-Yfx">
             <objects>
-                <viewController id="I5J-3e-r6o" sceneMemberID="viewController">
+                <viewController id="I5J-3e-r6o" customClass="LoginViewController" customModule="testTwitter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="NYK-1I-bVf"/>
                         <viewControllerLayoutGuide type="bottom" id="nSw-mK-tJx"/>
@@ -135,7 +135,7 @@
             </objects>
             <point key="canvasLocation" x="998" y="139"/>
         </scene>
-        <!--Item-->
+        <!--Home-->
         <scene sceneID="2lF-9L-AJg">
             <objects>
                 <viewController id="8g5-aU-SUS" sceneMemberID="viewController">
@@ -148,7 +148,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="mQ4-Vv-BLS"/>
+                    <tabBarItem key="tabBarItem" title="Home" id="mQ4-Vv-BLS"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UXX-gK-W80" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

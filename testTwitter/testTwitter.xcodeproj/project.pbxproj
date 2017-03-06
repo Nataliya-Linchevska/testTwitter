@@ -12,6 +12,8 @@
 		CE66C9231E6D384E00B6690D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE66C9221E6D384E00B6690D /* Assets.xcassets */; };
 		CE66C9261E6D384F00B6690D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE66C9241E6D384F00B6690D /* LaunchScreen.storyboard */; };
 		CE66C92E1E6D397A00B6690D /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE66C92D1E6D397A00B6690D /* SplashViewController.swift */; };
+		CE66C9301E6D57C700B6690D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE66C92F1E6D57C700B6690D /* LoginViewController.swift */; };
+		CE66C9321E6D5F8D00B6690D /* TwitterLoginDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE66C9311E6D5F8D00B6690D /* TwitterLoginDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		CE66C9251E6D384F00B6690D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE66C9271E6D384F00B6690D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE66C92D1E6D397A00B6690D /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		CE66C92F1E6D57C700B6690D /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		CE66C9311E6D5F8D00B6690D /* TwitterLoginDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterLoginDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,8 @@
 			children = (
 				CE66C91B1E6D384E00B6690D /* AppDelegate.swift */,
 				CE66C92D1E6D397A00B6690D /* SplashViewController.swift */,
+				CE66C9311E6D5F8D00B6690D /* TwitterLoginDelegate.swift */,
+				CE66C92F1E6D57C700B6690D /* LoginViewController.swift */,
 				CE66C91F1E6D384E00B6690D /* Main.storyboard */,
 				CE66C9221E6D384E00B6690D /* Assets.xcassets */,
 				CE66C9241E6D384F00B6690D /* LaunchScreen.storyboard */,
@@ -136,6 +142,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE66C9321E6D5F8D00B6690D /* TwitterLoginDelegate.swift in Sources */,
+				CE66C9301E6D57C700B6690D /* LoginViewController.swift in Sources */,
 				CE66C91C1E6D384E00B6690D /* AppDelegate.swift in Sources */,
 				CE66C92E1E6D397A00B6690D /* SplashViewController.swift in Sources */,
 			);
@@ -297,6 +305,7 @@
 				CE66C92C1E6D384F00B6690D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
