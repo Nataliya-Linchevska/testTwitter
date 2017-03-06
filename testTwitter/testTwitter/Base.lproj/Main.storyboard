@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -60,28 +61,50 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="twitterLogo" translatesAutoresizingMaskIntoConstraints="NO" id="bSQ-FY-wrj">
                                 <rect key="frame" x="147" y="293" width="80" height="80"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome to Twitter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZnI-UY-u8t">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Welcome to Twitter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZnI-UY-u8t">
                                 <rect key="frame" x="76" y="381" width="223" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="This is test app for Light&amp;Byte" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wKC-lY-OhN">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="This is test app for Light&amp;Byte" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wKC-lY-OhN">
                                 <rect key="frame" x="72" y="421" width="231" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vod-lB-iXu">
+                                <rect key="frame" x="100" y="461" width="174" height="43"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DlI-UP-wOZ">
+                                        <rect key="frame" x="64" y="6" width="46" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Log In"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="174" id="Dob-g3-9QF"/>
+                                    <constraint firstAttribute="height" constant="43" id="joR-0T-kUf"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="bSQ-FY-wrj" firstAttribute="centerY" secondItem="oon-1C-OLm" secondAttribute="centerY" multiplier="0.05" id="DtT-t4-0OH"/>
+                            <constraint firstItem="vod-lB-iXu" firstAttribute="centerX" secondItem="oon-1C-OLm" secondAttribute="centerX" id="N8l-19-CU7"/>
+                            <constraint firstItem="wKC-lY-OhN" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="oon-1C-OLm" secondAttribute="leadingMargin" constant="5" id="PzM-SR-uVh"/>
+                            <constraint firstItem="nSw-mK-tJx" firstAttribute="top" relation="lessThanOrEqual" secondItem="vod-lB-iXu" secondAttribute="bottom" constant="60" id="ddl-vS-br0"/>
+                            <constraint firstItem="ZnI-UY-u8t" firstAttribute="centerY" secondItem="oon-1C-OLm" secondAttribute="centerY" multiplier="1.25" id="eBO-HZ-HEH"/>
+                            <constraint firstItem="ZnI-UY-u8t" firstAttribute="centerX" secondItem="oon-1C-OLm" secondAttribute="centerX" id="ggf-vo-diy"/>
                             <constraint firstItem="bSQ-FY-wrj" firstAttribute="height" secondItem="oon-1C-OLm" secondAttribute="height" multiplier="0.1" id="hJ7-Ys-Qoa"/>
+                            <constraint firstItem="wKC-lY-OhN" firstAttribute="centerX" secondItem="oon-1C-OLm" secondAttribute="centerX" id="hsd-z7-Ag6"/>
                             <constraint firstItem="bSQ-FY-wrj" firstAttribute="centerX" secondItem="oon-1C-OLm" secondAttribute="centerX" id="jBi-YW-jPB"/>
                             <constraint firstItem="bSQ-FY-wrj" firstAttribute="centerY" secondItem="oon-1C-OLm" secondAttribute="centerY" id="kg3-aP-LVw"/>
                             <constraint firstItem="bSQ-FY-wrj" firstAttribute="height" secondItem="oon-1C-OLm" secondAttribute="height" multiplier="0.25" id="mA1-YP-F4W"/>
+                            <constraint firstItem="vod-lB-iXu" firstAttribute="top" relation="lessThanOrEqual" secondItem="wKC-lY-OhN" secondAttribute="bottom" constant="80" id="qDy-w9-xOu"/>
+                            <constraint firstItem="wKC-lY-OhN" firstAttribute="top" secondItem="ZnI-UY-u8t" secondAttribute="bottom" constant="30" id="tyk-5p-zTH"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="wKC-lY-OhN" secondAttribute="trailing" constant="5" id="yah-hz-pCt"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -93,7 +116,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IUO-B7-Gho" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="33" y="1056"/>
+            <point key="canvasLocation" x="32.799999999999997" y="1055.6221889055473"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="eZr-aw-1D7">
