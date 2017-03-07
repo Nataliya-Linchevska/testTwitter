@@ -40,13 +40,11 @@ class LoginViewController: UIViewController {
         
         // анімація кнопок
         buttonContainerView.layer.cornerRadius = 5 //заокруглення кнопки
-        
         buttonContainerView.alpha = 0
         titleLabel.alpha = 0
         subtitleLabel.alpha = 0
         
         UIApplication.shared.statusBarStyle = .lightContent
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -78,7 +76,6 @@ class LoginViewController: UIViewController {
         TwitterClient.sharedInstance?.login(success: {
             print("Logget In")
             self.dismiss(animated: true, completion: {
-            
             })
         }, failure: { (error) in
             print(error)

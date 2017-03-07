@@ -31,7 +31,7 @@ class SplashViewController: UIViewController, TwitterLoginDelegate {
     }
     
     func goToApp() {
-        self.performSegue(withIdentifier: "TabTappedViewSegue", sender: self)
+        self.performSegue(withIdentifier: "HomeSegue", sender: self)
     }
     
     func continueLogin() {

@@ -27,7 +27,6 @@ class User {
                 
                 if let userData = userData {
                     let dictionary = try! JSONSerialization.jsonObject(with: userData as Data, options: []) as! NSDictionary
-                    
                     _currentUser = User(dictionary: dictionary)
                 }
             }
@@ -44,9 +43,12 @@ class User {
             } else {
                 defaults.set(nil, forKey: "currentUser")
             }
-
-        
         }
     }
-
 }
+
+
+
+
+
+
