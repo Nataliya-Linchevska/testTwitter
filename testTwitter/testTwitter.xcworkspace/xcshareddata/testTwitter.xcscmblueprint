@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "87A491499B9F998F288EE35007856E51703B5722",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "87A491499B9F998F288EE35007856E51703B5722" : 9223372036854775807,
+    "37072768C9E53AEF61F92D003C83C80725B51028" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "7AFA2F86-4AFB-4DBD-9026-4141E6995974",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "87A491499B9F998F288EE35007856E51703B5722" : "testTwitter\/",
+    "37072768C9E53AEF61F92D003C83C80725B51028" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "testTwitter",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "testTwitter\/testTwitter.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Nataliya-Linchevska\/Homework.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "37072768C9E53AEF61F92D003C83C80725B51028"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Nataliya-Linchevska\/testTwitter",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "87A491499B9F998F288EE35007856E51703B5722"
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+testTwitter/Pods/Manifest.lock
+testTwitter/Pods/AFNetworking/LICENSE
+testTwitter/Pods/AFNetworking/README.md
+testTwitter/Pods/AFNetworking/AFNetworking/AFHTTPSessionManager.h
+testTwitter/Pods/AFNetworking/AFNetworking/AFHTTPSessionManager.m
+testTwitter/Pods/AFNetworking/AFNetworking/AFNetworking.h
+testTwitter/Pods/AFNetworking/AFNetworking/AFNetworkReachabilityManager.h
+testTwitter/Pods/AFNetworking/AFNetworking/AFNetworkReachabilityManager.m
+testTwitter/Pods/AFNetworking/AFNetworking/AFSecurityPolicy.h
+testTwitter/Pods/AFNetworking/AFNetworking/AFSecurityPolicy.m
+testTwitter/Pods/AFNetworking/AFNetworking/AFURLRequestSerialization.h
+testTwitter/Pods/AFNetworking/AFNetworking/AFURLRequestSerialization.m
+testTwitter/Pods/AFNetworking/AFNetworking/AFURLResponseSerialization.h
+testTwitter/Pods/AFNetworking/AFNetworking/AFURLResponseSerialization.m
+testTwitter/Pods/AFNetworking/AFNetworking/AFURLSessionManager.h
+testTwitter/Pods/AFNetworking/AFNetworking/AFURLSessionManager.m
+testTwitter/Pods/AFNetworking/UIKit+AFNetworking/AFAutoPurgingImageCache.h
+testTwitter/Pods/AFNetworking/UIKit+AFNetworking/AFAutoPurgingImageCache.m
+testTwitter/Pods/AFNetworking/UIKit+AFNetworking/AFImageDownloader.h
+testTwitter/Pods/AFNetworking/UIKit+AFNetworking/AFImageDownloader.m
+testTwitter/Pods/AFNetworking/UIKit+AFNetworking/AFNetworkActivityIndicatorManager.h
+testTwitter/Pods/AFNetworking/UIKit+AFNetworking/AFNetworkActivityIndicatorManager.m
+testTwitter/Pods/AFNetworking/UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.h
+testTwitter/Pods/AFNetworking/UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.m
+testTwitter/Pods/AFNetworking/UIKit+AFNetworking/UIButton+AFNetworking.h
+testTwitter/Pods/AFNetworking/UIKit+AFNetworking/UIButton+AFNetworking.m
+testTwitter/Pods/AFNetworking/UIKit+AFNetworking/UIImage+AFNetworking.h
+testTwitter/Pods/AFNetworking/UIKit+AFNetworking/UIImageView+AFNetworking.h
+testTwitter/Pods/AFNetworking/UIKit+AFNetworking/UIImageView+AFNetworking.m
+testTwitter/Pods/AFNetworking/UIKit+AFNetworking/UIKit+AFNetworking.h
+testTwitter/Pods/AFNetworking/UIKit+AFNetworking/UIProgressView+AFNetworking.h
+testTwitter/Pods/AFNetworking/UIKit+AFNetworking/UIProgressView+AFNetworking.m
+testTwitter/Pods/AFNetworking/UIKit+AFNetworking/UIRefreshControl+AFNetworking.h
+testTwitter/Pods/AFNetworking/UIKit+AFNetworking/UIRefreshControl+AFNetworking.m
+testTwitter/Pods/AFNetworking/UIKit+AFNetworking/UIWebView+AFNetworking.h
+testTwitter/Pods/AFNetworking/UIKit+AFNetworking/UIWebView+AFNetworking.m
+testTwitter/Pods/BDBOAuth1Manager/LICENSE
+testTwitter/Pods/BDBOAuth1Manager/README.md
+testTwitter/Pods/BDBOAuth1Manager/BDBOAuth1Manager/BDBOAuth1RequestSerializer.h
+testTwitter/Pods/BDBOAuth1Manager/BDBOAuth1Manager/BDBOAuth1RequestSerializer.m
+testTwitter/Pods/BDBOAuth1Manager/BDBOAuth1Manager/BDBOAuth1SessionManager.h
+testTwitter/Pods/BDBOAuth1Manager/BDBOAuth1Manager/BDBOAuth1SessionManager.m
+testTwitter/Pods/BDBOAuth1Manager/BDBOAuth1Manager/Categories/NSDictionary+BDBOAuth1Manager.h
+testTwitter/Pods/BDBOAuth1Manager/BDBOAuth1Manager/Categories/NSDictionary+BDBOAuth1Manager.m
+testTwitter/Pods/BDBOAuth1Manager/BDBOAuth1Manager/Categories/NSString+BDBOAuth1Manager.h
+testTwitter/Pods/BDBOAuth1Manager/BDBOAuth1Manager/Categories/NSString+BDBOAuth1Manager.m
+testTwitter/Pods/Pods.xcodeproj/project.pbxproj
+testTwitter/Pods/Pods.xcodeproj/xcuserdata/user.xcuserdatad/xcschemes/AFNetworking.xcscheme
+testTwitter/Pods/Pods.xcodeproj/xcuserdata/user.xcuserdatad/xcschemes/BDBOAuth1Manager.xcscheme
+testTwitter/Pods/Pods.xcodeproj/xcuserdata/user.xcuserdatad/xcschemes/Pods-testTwitter.xcscheme
+testTwitter/Pods/Pods.xcodeproj/xcuserdata/user.xcuserdatad/xcschemes/xcschememanagement.plist
+testTwitter/Pods/Target Support Files/AFNetworking/AFNetworking-dummy.m
+testTwitter/Pods/Target Support Files/AFNetworking/AFNetworking-prefix.pch
+testTwitter/Pods/Target Support Files/AFNetworking/AFNetworking-umbrella.h
+testTwitter/Pods/Target Support Files/AFNetworking/AFNetworking.modulemap
+testTwitter/Pods/Target Support Files/AFNetworking/AFNetworking.xcconfig
+testTwitter/Pods/Target Support Files/AFNetworking/Info.plist
+testTwitter/Pods/Target Support Files/BDBOAuth1Manager/BDBOAuth1Manager-dummy.m
+testTwitter/Pods/Target Support Files/BDBOAuth1Manager/BDBOAuth1Manager-prefix.pch
+testTwitter/Pods/Target Support Files/BDBOAuth1Manager/BDBOAuth1Manager-umbrella.h
+testTwitter/Pods/Target Support Files/BDBOAuth1Manager/BDBOAuth1Manager.modulemap
+testTwitter/Pods/Target Support Files/BDBOAuth1Manager/BDBOAuth1Manager.xcconfig
+testTwitter/Pods/Target Support Files/BDBOAuth1Manager/Info.plist
+testTwitter/Pods/Target Support Files/Pods-testTwitter/Info.plist
+testTwitter/Pods/Target Support Files/Pods-testTwitter/Pods-testTwitter-acknowledgements.markdown
+testTwitter/Pods/Target Support Files/Pods-testTwitter/Pods-testTwitter-acknowledgements.plist
+testTwitter/Pods/Target Support Files/Pods-testTwitter/Pods-testTwitter-dummy.m
+testTwitter/Pods/Target Support Files/Pods-testTwitter/Pods-testTwitter-frameworks.sh
+testTwitter/Pods/Target Support Files/Pods-testTwitter/Pods-testTwitter-resources.sh
+testTwitter/Pods/Target Support Files/Pods-testTwitter/Pods-testTwitter-umbrella.h
+testTwitter/Pods/Target Support Files/Pods-testTwitter/Pods-testTwitter.debug.xcconfig
+testTwitter/Pods/Target Support Files/Pods-testTwitter/Pods-testTwitter.modulemap

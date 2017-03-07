@@ -75,7 +75,14 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func btnLogin() {
-    
+        TwitterClient.sharedInstance?.login(success: {
+            print("Logget In")
+            self.dismiss(animated: true, completion: {
+            
+            })
+        }, failure: { (error) in
+            print(error)
+        })
     }
 
     
