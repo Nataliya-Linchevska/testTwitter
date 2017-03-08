@@ -185,7 +185,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="BwT-26-0Vj">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="homeCell" id="BwT-26-0Vj">
                                         <rect key="frame" x="0.0" y="28" width="375" height="123"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BwT-26-0Vj" id="oyx-XE-cWm">
@@ -238,7 +238,6 @@
                                                                 <constraint firstAttribute="height" constant="20" id="9fC-6m-AgQ"/>
                                                                 <constraint firstAttribute="width" constant="20" id="scr-Bs-E1r"/>
                                                             </constraints>
-                                                            <state key="normal" image="Icon-Reply"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="image" keyPath="image" value="Icon-Reply"/>
                                                                 <userDefinedRuntimeAttribute type="color" keyPath="imageColorOn">
@@ -252,7 +251,6 @@
                                                                 <constraint firstAttribute="height" constant="20" id="Oe5-7F-4Hq"/>
                                                                 <constraint firstAttribute="width" constant="20" id="rhq-jK-zcy"/>
                                                             </constraints>
-                                                            <state key="normal" image="Icon-Favorite"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="image" keyPath="image" value="Icon-Favorite"/>
                                                                 <userDefinedRuntimeAttribute type="color" keyPath="imageColorOn">
@@ -286,7 +284,6 @@
                                                                 <constraint firstAttribute="width" constant="20" id="VyA-F3-fKq"/>
                                                                 <constraint firstAttribute="height" constant="20" id="zKI-s8-cnF"/>
                                                             </constraints>
-                                                            <state key="normal" image="Icon-Retweet"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="image" keyPath="image" value="Icon-Retweet"/>
                                                                 <userDefinedRuntimeAttribute type="color" keyPath="imageColorOn">
@@ -355,6 +352,9 @@
                         <barButtonItem key="rightBarButtonItem" image="write_twits" id="xae-C7-Bgo"/>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="tableView" destination="9eT-ct-2CK" id="flJ-Jl-sEJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UXX-gK-W80" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

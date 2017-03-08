@@ -68,6 +68,22 @@ class TwitterClient: BDBOAuth1SessionManager {
         }
     }
     
+    // отримання своєї новинної стрічки (GET home timeline json)
+    func homeTimeLine(success: @escaping ([Tweet])->(), failure: @escaping (NSError)->()) {
+        let params = ["count": 10]
+        
+        get("1.1/statuses/home_timeline.json", parameters: params, progress: nil, success: { (task, response) in
+            print(response)
+        }) { (task, error) in
+            failure(error as NSError)
+        }
+    
+    }
+    
+    
+    
+    
+    
     // вихід з облікового запису
     func logout() {
         User.currentUser = nil
