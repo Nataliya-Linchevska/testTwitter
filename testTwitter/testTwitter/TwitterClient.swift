@@ -73,7 +73,10 @@ class TwitterClient: BDBOAuth1SessionManager {
         let params = ["count": 10]
         
         get("1.1/statuses/home_timeline.json", parameters: params, progress: nil, success: { (task, response) in
-            print(response)
+//            print(response)
+            let dictionaries = response as! [NSDictionary]
+            let tweets = Tweet.tweetsWithArray(dictionaries: dictionaries)
+            success(tweets)
         }) { (task, error) in
             failure(error as NSError)
         }
