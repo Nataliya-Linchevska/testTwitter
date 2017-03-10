@@ -55,6 +55,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 
+// функція заміни тексту
 extension String {
     func replace (target: String, withString: String) -> String {
         return self.replacingOccurrences(of: target, with: withString, options: String.CompareOptions.literal, range: nil)

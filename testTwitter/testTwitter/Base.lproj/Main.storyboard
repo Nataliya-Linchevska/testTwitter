@@ -157,7 +157,8 @@
             <objects>
                 <navigationController id="386-cK-nSF" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="Rui-gX-xnr"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kDU-hG-Quh">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="kDU-hG-Quh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -189,7 +190,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="123"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BwT-26-0Vj" id="oyx-XE-cWm">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="123"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="122"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="di0-OU-zUb">
@@ -356,6 +357,8 @@
                                             <outlet property="lblRetweetCount" destination="rOk-ww-hPe" id="hnc-Bp-Swg"/>
                                             <outlet property="lblTweetAge" destination="Frm-df-iTu" id="tZ3-wN-6fI"/>
                                             <outlet property="lblTweetContents" destination="Uup-F0-fMH" id="RaX-zh-pIM"/>
+                                            <outlet property="mediaImageHeightConstraint" destination="uDW-v1-4rQ" id="b89-Tv-Sa4"/>
+                                            <outlet property="mediaImageVerticalSpasingConstraint" destination="PiS-Fd-lqW" id="Yi7-c8-Xz7"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

@@ -8,15 +8,24 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, TwitterTableViewDelegate {
     
     var tweets: [Tweet]?
+    
+    var refreshControl : UIRefreshControl!
     
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         UIApplication.shared.statusBarStyle = .default
+        
+        // лого замість заголовку
+        let logo = UIImage(named: "blue_logo")
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+        imageView.contentMode = .scaleAspectFit
+        imageView.image = logo
+        self.navigationItem.titleView = imageView
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -26,6 +35,11 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.estimatedRowHeight = 160.0
         
         reloadData()
+        
+        // оновлення списку твітів по відтягуванню екрану вниз
+        refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(HomeViewController.reloadData), for: UIControlEvents.valueChanged)
+        tableView.insertSubview(refreshControl, at: 0)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -38,14 +52,27 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "homeCell", for: indexPath) as! TweetCompactCell
+        cell.indexPath = indexPath as NSIndexPath
         cell.tweet = tweets![indexPath.row]
+        cell.delegate = self
         return cell
+    }
+    
+    var reloadedIndexPath = [Int]()
+    
+    // метод для оновлення медіа
+    func reloadTableCellAtIndex(cell: UITableViewCell, indexPath: NSIndexPath) {
+        if (reloadedIndexPath.index(of: indexPath.row) == nil) {
+            reloadedIndexPath.append(indexPath.row)
+            tableView.reloadRows(at: [indexPath as IndexPath], with: .automatic)
+        }
     }
     
     func reloadData() {
         TwitterClient.sharedInstance?.homeTimeLine(success: { (tweets) in
             self.tweets = tweets
             self.tableView.reloadData()
+            self.refreshControl.endRefreshing()
         }, failure: { (error) in
             print(error.localizedDescription)
         })

@@ -57,6 +57,14 @@ class Tweet {
         
         retweeted = (dictionary["retweeted"] as? Bool) ?? false
         favorited = (dictionary["favorited"] as? Bool) ?? false
+        
+        let timestampString = dictionary["created_at"] as? String
+        
+        if let timestampString = timestampString {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "EEE MMM d HH:mm:ss Z y"
+            timestamp = formatter.date(from: timestampString) as NSDate?
+        }
     }
     
     class func tweetsWithArray(dictionaries: [NSDictionary])->[Tweet] {
@@ -66,6 +74,65 @@ class Tweet {
             tweets.append(tweet)
         }
         return tweets
+    }
+    
+    // вираховуємо час твіта
+    class func timeSince(date: NSDate) -> String {
+        var unit = "s"
+        var timeSince = abs(date.timeIntervalSinceNow as Double) // секунди
+        let calculateTime = intervalTime(unit: unit, value: timeSince)
+        
+        while (calculateTime != true) {
+            unit = "m"
+            timeSince = round(timeSince / 60)
+            if intervalTime(unit: unit, value: timeSince) {break}
+            
+            unit = "h"
+            timeSince = round(timeSince / 60)
+            if intervalTime(unit: unit, value: timeSince) {break}
+            
+            unit = "d"
+            timeSince = round(timeSince / 24)
+            if intervalTime(unit: unit, value: timeSince) {break}
+
+            unit = "w"
+            timeSince = round(timeSince / 7)
+            if intervalTime(unit: unit, value: timeSince) {break}
+            
+            (unit, timeSince) = localizedDate(date: date); break
+        }
+        
+        let value = Int(timeSince)
+        return "\(value)\(unit)"
+    }
+    
+    class func intervalTime(unit: String, value: Double) -> Bool {
+        let value = Int(round(value))
+        
+        switch unit {
+        case "s":
+            return value < 60
+        case "m":
+            return value < 60
+        case "h":
+            return value < 24
+        case "d":
+            return value < 7
+        case "w":
+            return value < 4
+        default:
+            return true
+        }
+    }
+    
+    class func localizedDate (date: NSDate) -> (unit: String, timeSince: Double) {
+        var unit = "/"
+        let formatter = DateFormatter()
+        formatter.dateFormat = "M"
+        let timeSince = Double(formatter.string(from: date as Date))!
+        formatter.dateFormat = "d/yy"
+        unit += formatter.string(from: date as Date)
+        return (unit, timeSince)
     }
 
 }
