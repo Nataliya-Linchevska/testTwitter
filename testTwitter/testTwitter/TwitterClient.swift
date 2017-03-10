@@ -12,6 +12,8 @@ import BDBOAuth1Manager
 class TwitterClient: BDBOAuth1SessionManager {
     static let sharedInstance = TwitterClient(baseURL: NSURL(string: "https://api.twitter.com") as URL! , consumerKey: "ooIpINcAHI40e1TiPpEcjtzPa", consumerSecret: "hB74SUb60EkCMZT6mvQVLWLpFaQIVYIhdAum4bKISTs57GSPBY")
     
+//    static let sharedInstance = TwitterClient(baseURL: NSURL(string: "https://api.twitter.com") as URL! , consumerKey: "owS0EttRA6qTvvWyJSvUqsqLr", consumerSecret: "GCKGzRJFsErOcHMYEArnfTT2d6y6aCkZCWF6i2s26tz09FSXoy")
+    
     var loginSuccess: (()->())?
     var loginFailure: ((NSError)->())?
     weak var delegate: TwitterLoginDelegate?
@@ -69,8 +71,13 @@ class TwitterClient: BDBOAuth1SessionManager {
     }
     
     // отримання своєї новинної стрічки (GET home timeline json)
-    func homeTimeLine(success: @escaping ([Tweet])->(), failure: @escaping (NSError)->()) {
-        let params = ["count": 10]
+    func homeTimeLine(maxId: Int? = nil, success: @escaping ([Tweet])->(), failure: @escaping (NSError)->()) {
+        var params = ["count": 10]
+        // для догрузки наступної партії з 10 твітів
+        if (maxId != nil) {
+            params["max_id"] = maxId
+    }
+        
         
         get("1.1/statuses/home_timeline.json", parameters: params, progress: nil, success: { (task, response) in
 //            print(response)
@@ -83,10 +90,7 @@ class TwitterClient: BDBOAuth1SessionManager {
     
     }
     
-    
-    
-    
-    
+
     // вихід з облікового запису
     func logout() {
         User.currentUser = nil

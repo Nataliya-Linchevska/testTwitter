@@ -8,13 +8,20 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, TwitterTableViewDelegate {
-    
-    var tweets: [Tweet]?
-    
-    var refreshControl : UIRefreshControl!
+class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate, TwitterTableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
+
+    var lastTweetId: Int?
+    
+    var tweets: [Tweet]? {
+        didSet {
+            self.lastTweetId = tweets![tweets!.endIndex - 1].tweetID as? Int // отримуємо останній id твіта
+        }
+    }
+    
+    var refreshControl : UIRefreshControl!
+    var isMoreDataLoading = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,18 +71,47 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     func reloadTableCellAtIndex(cell: UITableViewCell, indexPath: NSIndexPath) {
         if (reloadedIndexPath.index(of: indexPath.row) == nil) {
             reloadedIndexPath.append(indexPath.row)
-            tableView.reloadRows(at: [indexPath as IndexPath], with: .automatic)
+            tableView.reloadRows(at: [indexPath as IndexPath], with: .none)
         }
     }
     
-    func reloadData() {
-        TwitterClient.sharedInstance?.homeTimeLine(success: { (tweets) in
-            self.tweets = tweets
-            self.tableView.reloadData()
-            self.refreshControl.endRefreshing()
+    func reloadData(append: Bool = false) {
+        TwitterClient.sharedInstance?.homeTimeLine(maxId: lastTweetId, success: { (tweets) in
+            
+            // при догрузкі приєдную нові твіти до тих що є
+            if (append) {
+                var cleaned = tweets
+                if tweets.count > 0 {
+                    cleaned.remove(at: 0)
+                }
+                
+                if cleaned.count > 0 {
+                    self.tweets?.append(contentsOf: cleaned)
+                    self.isMoreDataLoading = false
+                    self.tableView.reloadData()
+                }
+            } else {
+                self.tweets = tweets
+                self.tableView.reloadData()
+                self.refreshControl.endRefreshing()
+            }
+            
         }, failure: { (error) in
             print(error.localizedDescription)
         })
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        if (tweets != nil && !isMoreDataLoading && (tweets?.count)! > 0) {
+            let scrollViewContentHeight = tableView.contentSize.height
+            let scrollOffsetTreshold = scrollViewContentHeight - tableView.bounds.size.height  // порог до якого тягнути
+            if scrollView.contentOffset.y > scrollOffsetTreshold && tableView.isDragging {
+                isMoreDataLoading = true
+                reloadData(append: true)
+            }
+            
+        }
     }
 
 }

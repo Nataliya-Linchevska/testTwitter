@@ -20,6 +20,8 @@ class Tweet {
     var retweetsCount: Int = 0      // кількість ретвітів
     var favoritesCount: Int = 0     // кількість лайків
     
+    var precedingTweetId: Int?      // id попереднього твіта
+    
     var favorited: Bool {            // чи поставлений лайк користувачем
         didSet {
             if favorited {
@@ -44,6 +46,8 @@ class Tweet {
     
     init (dictionary: NSDictionary) {
         tweetID = dictionary["id"] as! NSNumber
+        precedingTweetId = dictionary["in_reply_to_status_id"] as? Int
+        
         urls = (dictionary["entities"] as? NSDictionary)?["urls"] as? [NSDictionary]
         media = (dictionary["entities"] as? NSDictionary)?["media"] as? [NSDictionary]
         
