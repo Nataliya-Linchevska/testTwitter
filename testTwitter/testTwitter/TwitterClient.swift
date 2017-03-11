@@ -76,9 +76,7 @@ class TwitterClient: BDBOAuth1SessionManager {
         // для догрузки наступної партії з 10 твітів
         if (maxId != nil) {
             params["max_id"] = maxId
-    }
-        
-        
+        }
         get("1.1/statuses/home_timeline.json", parameters: params, progress: nil, success: { (task, response) in
 //            print(response)
             let dictionaries = response as! [NSDictionary]
@@ -87,10 +85,28 @@ class TwitterClient: BDBOAuth1SessionManager {
         }) { (task, error) in
             failure(error as NSError)
         }
-    
     }
     
-
+    //     запроси до своїх твітів користувача (GET user timeline json)
+    func userTimeLine(user: User, maxId: Int? = nil, success: @escaping ([Tweet])->(), failure: @escaping (NSError)->()) {
+        
+        var params = ["count": 10]
+        params["user_id"] = user.id!
+        if (maxId != nil) {
+            params["max_id"] = maxId
+        }
+        
+        get("1.1/statuses/user_timeline.json", parameters: params, progress: nil, success: { (task, response) in
+            let dictionaries = response as! [NSDictionary]
+            let tweets = Tweet.tweetsWithArray(dictionaries: dictionaries)
+            success(tweets)
+        }) { (task, error) in
+            print("error: \(error.localizedDescription)")
+            failure(error as NSError)
+        }
+    }
+    
+    
     // вихід з облікового запису
     func logout() {
         User.currentUser = nil

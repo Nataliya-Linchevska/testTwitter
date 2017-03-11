@@ -10,13 +10,19 @@ import UIKit
 
 class User {
     
+    static var tempUser: User?
+
     static let userDidLogoutNotification = "UserDidLogout"
+    
+    var id: Int? // id користувача
     
     var dictionary: NSDictionary?
     static var _currentUser: User?
     
     init(dictionary: NSDictionary) {
         self.dictionary = dictionary
+        
+        id = dictionary["id"] as? Int
     }
     
     class var currentUser: User? {

@@ -1,18 +1,29 @@
 //
-//  HomeViewController.swift
+//  ProfileViewController.swift
 //  testTwitter
 //
-//  Created by user on 07.03.17.
+//  Created by user on 11.03.17.
 //  Copyright © 2017 GeekHub. All rights reserved.
 //
 
 import UIKit
 
-class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate, TwitterTableViewDelegate {
+class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, TwitterTableViewDelegate {
+    
+    
+    @IBOutlet weak var ivBackgroundImage: UIImageView!
+    @IBOutlet weak var ivProfileImage: UIImageView!
     
     @IBOutlet weak var tableView: UITableView!
+    
 
     var lastTweetId: Int?
+    
+    var user: User! {
+        didSet {
+            configureViewController()
+        }
+    }
     
     var tweets: [Tweet]? {
         didSet {
@@ -24,6 +35,21 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "ProfileConfigureView"), object: nil, queue: OperationQueue.main) { (notification) in
+//            self.configureViewController()
+            if User.tempUser != nil {
+                self.user = User.tempUser
+            }
+        }        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        user = User.currentUser!
+    }
+    
+    func configureViewController() {
         UIApplication.shared.statusBarStyle = .default
         
         // лого замість заголовку
@@ -46,6 +72,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(HomeViewController.reloadData), for: UIControlEvents.valueChanged)
         tableView.insertSubview(refreshControl, at: 0)
+
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -75,8 +102,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func reloadData(append: Bool = false) {
-        TwitterClient.sharedInstance?.homeTimeLine(maxId: lastTweetId, success: { (tweets) in
-            
+        TwitterClient.sharedInstance?.userTimeLine(user: user, maxId: lastTweetId, success: { (tweets) in
             // при догрузкі приєдную нові твіти до тих що є
             if (append) {
                 var cleaned = tweets
@@ -93,7 +119,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 self.tableView.reloadData()
                 self.refreshControl.endRefreshing()
             }
-            
         }, failure: { (error) in
             print(error.localizedDescription)
         })
@@ -111,17 +136,5 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
 
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
