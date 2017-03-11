@@ -50,6 +50,17 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func configureViewController() {
+        let profileImageUrl = user.profileUrl
+        let backgroundImageUrl = user.backgroundImageUrl
+        ivProfileImage.setImageWith(profileImageUrl! as URL)
+        
+        if let backgroundImageUrl = backgroundImageUrl {
+            ivBackgroundImage.setImageWith(NSURL(string: backgroundImageUrl)! as URL)
+        }
+        
+        ivProfileImage.clipsToBounds = true // обрізати картинку по рамкі
+        ivProfileImage.layer.cornerRadius = 5 // заокруглити краї
+        
         UIApplication.shared.statusBarStyle = .default
         
         // лого замість заголовку

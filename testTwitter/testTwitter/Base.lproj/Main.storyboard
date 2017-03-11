@@ -39,13 +39,13 @@
                         </constraints>
                     </view>
                     <connections>
-                        <segue destination="nqB-QJ-1qm" kind="presentation" identifier="HomeSegue" id="oCh-Vl-sZh"/>
                         <segue destination="I5J-3e-r6o" kind="presentation" identifier="LoginSegue" id="Gmm-Gh-Jnr"/>
+                        <segue destination="386-cK-nSF" kind="presentation" identifier="HomeSegue" id="c13-Fe-7F0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="32.799999999999997" y="138.98050974512745"/>
+            <point key="canvasLocation" x="646" y="139"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="qcn-Sa-Yfx">
@@ -133,24 +133,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IUO-B7-Gho" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="33" y="871"/>
-        </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="eZr-aw-1D7">
-            <objects>
-                <tabBarController id="nqB-QJ-1qm" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="s5e-oJ-BMo">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="386-cK-nSF" kind="relationship" relationship="viewControllers" id="8gU-NM-MAs"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="adP-4E-zwe" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="722" y="139"/>
+            <point key="canvasLocation" x="646" y="923"/>
         </scene>
         <!--Item-->
         <scene sceneID="Tec-PM-xfB">
@@ -413,7 +396,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Q7-jQ-csb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3136.8000000000002" y="-220.83958020989508"/>
+            <point key="canvasLocation" x="3190" y="-219"/>
         </scene>
         <!--Home-->
         <scene sceneID="2lF-9L-AJg">
@@ -428,7 +411,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="123" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9eT-ct-2CK">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="homeCell" id="BwT-26-0Vj" customClass="TweetCompactCell" customModule="testTwitter" customModuleProvider="target">
@@ -636,7 +619,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UXX-gK-W80" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2242.4000000000001" y="138.0809595202399"/>
+            <point key="canvasLocation" x="2406" y="139"/>
         </scene>
         <!--Post Tweet-->
         <scene sceneID="Dfn-FY-fJF">
@@ -724,7 +707,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D5U-xQ-hd7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3137" y="534"/>
+            <point key="canvasLocation" x="3190" y="534"/>
         </scene>
     </scenes>
     <resources>

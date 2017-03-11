@@ -15,6 +15,9 @@ class User {
     static let userDidLogoutNotification = "UserDidLogout"
     
     var id: Int? // id користувача
+    var profileUrl: NSURL?
+    var backgroundImageUrl: String?
+    var usingBannerImage = true
     
     var dictionary: NSDictionary?
     static var _currentUser: User?
@@ -23,6 +26,18 @@ class User {
         self.dictionary = dictionary
         
         id = dictionary["id"] as? Int
+        
+        backgroundImageUrl = dictionary["profile_banner_url"] as? String
+        if (backgroundImageUrl != nil) {
+            backgroundImageUrl?.append("/600x200")
+        } else {
+            backgroundImageUrl = dictionary["profile_background_image_url_https"] as? String
+            usingBannerImage = false
+        }
+        
+        let profileUrlString = dictionary["profile_image_url_https"] as? String
+        profileUrl = NSURL(string: (profileUrlString?.replace(target: "normal.png", withString: "bigger.png"))!)
+        
     }
     
     class var currentUser: User? {
