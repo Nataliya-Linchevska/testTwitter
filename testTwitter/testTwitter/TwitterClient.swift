@@ -113,7 +113,54 @@ class TwitterClient: BDBOAuth1SessionManager {
         deauthorize()
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: User.userDidLogoutNotification), object: nil)
     }
+    
+    // статус твітів/ретвітів юзера
+    func retweet(params: NSDictionary?, retweet: Bool, completion: @escaping (_ tweet: Tweet?, _ error: Error?) ->()) {
+        let tweetId = params!["id"] as! Int
+        let endPoint = retweet ? "retweet" : "unretweet"
+        post("1.1/statuses/\(endPoint)/\(tweetId).json", parameters: params, progress: nil, success: { (task, response) in
+            let tweet = Tweet(dictionary: response as! NSDictionary)
+        }) { (task, error) in
+            completion(nil, error)
+        }
+    }
+    
+    // статус лайк/дизлайк юзера
+    func favorite(params: NSDictionary?, favorite: Bool, completion: @escaping (_ tweet: Tweet?, _ error: Error?) ->()) {
+        let endPoint = favorite ? "create" : "destroy"
+        post("1.1/favorites/\(endPoint).json", parameters: params, progress: nil, success: { (task, response) in
+            let tweet = Tweet(dictionary: response as! NSDictionary)
+        }) { (task, error) in
+            completion(nil, error)
+        }
+    }
+    
+    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

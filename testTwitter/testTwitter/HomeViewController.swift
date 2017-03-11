@@ -75,7 +75,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func reloadData(append: Bool = false) {
-        TwitterClient.sharedInstance?.homeTimeLine(maxId: lastTweetId, success: { (tweets) in
+        TwitterClient.sharedInstance?.homeTimeLine(maxId: !append ? nil : lastTweetId, success: { (tweets) in
             
             // при догрузкі приєдную нові твіти до тих що є
             if (append) {

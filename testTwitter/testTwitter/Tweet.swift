@@ -26,9 +26,14 @@ class Tweet {
         didSet {
             if favorited {
                 favoritesCount += 1 // збільшуємо кількість лайків
+                TwitterClient.sharedInstance?.favorite(params: ["id": tweetID], favorite: true, completion: { (tweet, error) in
+                    print("Favorited")
+                })
             } else {
                 favoritesCount -= 1
-
+                TwitterClient.sharedInstance?.favorite(params: ["id": tweetID], favorite: false, completion: { (tweet, error) in
+                    print("Unfavorited")
+                 })
             }
         }
     }
@@ -37,9 +42,14 @@ class Tweet {
         didSet {
             if retweeted {
                 retweetsCount += 1  // збільшуємо кількість ретвітів
+                TwitterClient.sharedInstance?.retweet(params: ["id": tweetID], retweet: true, completion: { (tweet, error) in
+                    print("Retweeted")
+                })
             } else {
                 retweetsCount -= 1
-                
+                TwitterClient.sharedInstance?.retweet(params: ["id": tweetID], retweet: false, completion: { (tweet, error) in
+                    print("Unretweeted")
+                })
             }
         }
     }

@@ -102,7 +102,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func reloadData(append: Bool = false) {
-        TwitterClient.sharedInstance?.userTimeLine(user: user, maxId: lastTweetId, success: { (tweets) in
+        TwitterClient.sharedInstance?.userTimeLine(user: user, maxId: !append ? nil : lastTweetId, success: { (tweets) in
             // при догрузкі приєдную нові твіти до тих що є
             if (append) {
                 var cleaned = tweets
