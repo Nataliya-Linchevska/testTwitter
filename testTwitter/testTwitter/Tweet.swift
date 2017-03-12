@@ -77,6 +77,7 @@ class Tweet {
         if let timestampString = timestampString {
             let formatter = DateFormatter()
             formatter.dateFormat = "EEE MMM d HH:mm:ss Z y"
+            formatter.locale = Locale(identifier: "en_US")
             timestamp = formatter.date(from: timestampString) as NSDate?
         }
     }

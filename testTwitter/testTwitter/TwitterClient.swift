@@ -10,9 +10,9 @@ import UIKit
 import BDBOAuth1Manager
 
 class TwitterClient: BDBOAuth1SessionManager {
-    static let sharedInstance = TwitterClient(baseURL: NSURL(string: "https://api.twitter.com") as URL! , consumerKey: "ooIpINcAHI40e1TiPpEcjtzPa", consumerSecret: "hB74SUb60EkCMZT6mvQVLWLpFaQIVYIhdAum4bKISTs57GSPBY")
+//    static let sharedInstance = TwitterClient(baseURL: NSURL(string: "https://api.twitter.com") as URL! , consumerKey: "ooIpINcAHI40e1TiPpEcjtzPa", consumerSecret: "hB74SUb60EkCMZT6mvQVLWLpFaQIVYIhdAum4bKISTs57GSPBY")
     
-//    static let sharedInstance = TwitterClient(baseURL: NSURL(string: "https://api.twitter.com") as URL! , consumerKey: "owS0EttRA6qTvvWyJSvUqsqLr", consumerSecret: "GCKGzRJFsErOcHMYEArnfTT2d6y6aCkZCWF6i2s26tz09FSXoy")
+    static let sharedInstance = TwitterClient(baseURL: NSURL(string: "https://api.twitter.com") as URL! , consumerKey: "owS0EttRA6qTvvWyJSvUqsqLr", consumerSecret: "GCKGzRJFsErOcHMYEArnfTT2d6y6aCkZCWF6i2s26tz09FSXoy")
     
     var loginSuccess: (()->())?
     var loginFailure: ((NSError)->())?

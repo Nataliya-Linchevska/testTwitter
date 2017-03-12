@@ -22,6 +22,7 @@ class TweetCompactCell: TweetCell {
         super.tweetSetConfigure()
         lblRetweetCount.text = tweet.retweetsCount > 0 ? String(tweet.retweetsCount) : ""
         lblFavoriteCount.text = tweet.favoritesCount > 0 ? String(tweet.favoritesCount): ""
+        
         lblTweetAge.text = Tweet.timeSince(date: tweet.timestamp!)
     }
 }
