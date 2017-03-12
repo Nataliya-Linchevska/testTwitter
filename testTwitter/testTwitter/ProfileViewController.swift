@@ -14,14 +14,11 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var ivBackgroundImage: UIImageView!
     @IBOutlet weak var ivProfileImage: UIImageView!
     @IBOutlet weak var tableView: UITableView!
-    
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var lblScreenName: UILabel!
     @IBOutlet weak var lblFollowers: UILabel!
     @IBOutlet weak var lblFollowing: UILabel!
     
-    
-
     var lastTweetId: Int?
     
     var user: User! {
@@ -157,6 +154,12 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             
         }
     }
-
-
 }
+
+
+
+
+
+
+
+

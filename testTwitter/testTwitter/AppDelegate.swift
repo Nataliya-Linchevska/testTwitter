@@ -12,12 +12,12 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    
     var splashDelay = false
-
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let barAppearace = UIBarButtonItem.appearance()
+        barAppearace.setBackButtonTitlePositionAdjustment(UIOffsetMake(0, -60), for:UIBarMetrics.default)
         return true
     }
 
@@ -52,7 +52,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func delay(_ delay: Double, closure: @escaping ()->()) {
         let when = DispatchTime.now() + delay
         DispatchQueue.main.asyncAfter(deadline: when, execute: closure)
-    }
+    }    
 }
 
 // функція заміни тексту

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class User {
+class User: NSObject {
     
     static var tempUser: User?
 

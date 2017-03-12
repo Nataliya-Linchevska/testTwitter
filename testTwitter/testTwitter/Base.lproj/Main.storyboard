@@ -50,7 +50,7 @@
         <!--Login View Controller-->
         <scene sceneID="qcn-Sa-Yfx">
             <objects>
-                <viewController id="I5J-3e-r6o" customClass="LoginViewController" customModule="testTwitter" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="I5J-3e-r6o" customClass="LoginViewController" customModule="testTwitter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="NYK-1I-bVf"/>
                         <viewControllerLayoutGuide type="bottom" id="nSw-mK-tJx"/>
@@ -461,26 +461,26 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nataha" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RSA-Gc-eMH">
-                                                    <rect key="frame" x="70" y="8" width="103" height="20"/>
+                                                    <rect key="frame" x="70" y="8" width="55" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="ioo-GF-ZKN"/>
-                                                        <constraint firstAttribute="width" constant="103" id="pj4-nh-oZY"/>
+                                                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="100" id="pj4-nh-oZY"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@someTwit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qda-0v-YJj">
-                                                    <rect key="frame" x="181" y="8" width="80" height="20"/>
+                                                    <rect key="frame" x="133" y="8" width="64.5" height="20"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="80" id="drO-4s-66C"/>
+                                                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="80" id="drO-4s-66C"/>
                                                         <constraint firstAttribute="height" constant="20" id="oqS-zZ-isJ"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="08/03/17" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Frm-df-iTu">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="08/03/17" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Frm-df-iTu">
                                                     <rect key="frame" x="310" y="8" width="55" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="55" id="idI-o6-aec"/>
@@ -640,7 +640,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="write_twits" id="xae-C7-Bgo">
                             <connections>
-                                <segue destination="VxK-1K-wRu" kind="show" id="8eq-Ym-bu8"/>
+                                <segue destination="VxK-1K-wRu" kind="show" identifier="toPost" id="8eq-Ym-bu8"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -651,7 +651,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UXX-gK-W80" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2406" y="139"/>
+            <point key="canvasLocation" x="2405.5999999999999" y="138.98050974512745"/>
         </scene>
         <!--Post Tweet-->
         <scene sceneID="Dfn-FY-fJF">
@@ -690,10 +690,9 @@
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="FYs-6G-sjx">
-                                <rect key="frame" x="10" y="110" width="355" height="434"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="What's new?" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="FYs-6G-sjx">
+                                <rect key="frame" x="10" y="110" width="355" height="483"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>

@@ -37,7 +37,6 @@ class TwitterClient: BDBOAuth1SessionManager {
     
     // получаємо токен і зберігаємо користувача
     func handleOpenUrl (url: NSURL) {
-        
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.splashDelay = true
         let requestToken = BDBOAuth1Credential(queryString: url.query)
@@ -106,14 +105,6 @@ class TwitterClient: BDBOAuth1SessionManager {
         }
     }
     
-    
-    // вихід з облікового запису
-    func logout() {
-        User.currentUser = nil
-        deauthorize()
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: User.userDidLogoutNotification), object: nil)
-    }
-    
     // статус твітів/ретвітів юзера
     func retweet(params: NSDictionary?, retweet: Bool, completion: @escaping (_ tweet: Tweet?, _ error: Error?) ->()) {
         let tweetId = params!["id"] as! Int
@@ -135,7 +126,16 @@ class TwitterClient: BDBOAuth1SessionManager {
         }
     }
     
-    
+    // публікація твітів
+    func publishTweet(apiParam: NSDictionary, completion: @escaping (_ newTweet: Tweet?, _ error: Error?) ->()){
+        post("1.1/statuses/update.json", parameters: apiParam, progress: nil, success: { (task, response) in
+            let tweet = Tweet(dictionary: response as! NSDictionary)
+            completion(tweet, nil)            
+        }) { (task, error) in
+            print("error creating tweet")
+            completion(nil, error)
+        }
+    }
 }
 
 
