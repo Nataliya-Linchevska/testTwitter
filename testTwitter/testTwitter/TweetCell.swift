@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol AnimatedImage {
+    func animateImageView(_ statusImageView: UIImageView)
+}
+
 class TweetCell: UITableViewCell {
     
     @IBOutlet weak var ivProfilePicture: UIImageView!
@@ -25,6 +29,7 @@ class TweetCell: UITableViewCell {
     @IBOutlet weak var mediaImageHeightConstraint: NSLayoutConstraint!
 
     var tweetID: NSNumber!
+    var parentControllerForZoomingImage: AnimatedImage?
     
     weak var delegate: TwitterTableViewDelegate?
     var indexPath: NSIndexPath!
@@ -35,8 +40,16 @@ class TweetCell: UITableViewCell {
         }
     }
     
+    func animate() {
+        parentControllerForZoomingImage?.animateImageView(ivMediaImage)
+    }
+    
     func tweetSetConfigure() {
         tweetID = tweet.tweetID
+        
+        // для збільшення картинки
+        ivMediaImage.isUserInteractionEnabled = true
+        ivMediaImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(TweetCell.animate as (TweetCell) -> () -> ())))
         
         var tweetTextFontSize: CGFloat { get { return 15.0 } }
         var tweetTextWeight: CGFloat { get { return UIFontWeightRegular } }
@@ -57,7 +70,6 @@ class TweetCell: UITableViewCell {
         btnFavorite.isSelected = tweet.favorited
         
         ivMediaImage.image = nil
-        
         var displayUrls = [String]()
         
         if let urls = urls {
@@ -79,11 +91,8 @@ class TweetCell: UITableViewCell {
                 lblTweetContents.text = lblTweetContents.text?.replace(target: urlText, withString: "")
                 
                 if((medium["type"] as? String) == "photo") {
-                    
                     mediaImageVerticalSpasingConstraint.constant = 8
                     ivMediaImage.isHidden = false
-
-                    
                     let mediaUrl = medium["media_url_https"] as! String
                     if mediaImageHeightConstraint != nil {
                         mediaImageHeightConstraint.isActive = false
@@ -102,9 +111,6 @@ class TweetCell: UITableViewCell {
                 }
             }
         }
-        
-        
-        
         
         if displayUrls.count > 0 {
             let content = lblTweetContents.text ?? ""
@@ -127,7 +133,6 @@ class TweetCell: UITableViewCell {
             
             lblTweetContents.attributedText = text
         }
-        
     }
     
     @IBAction func onRetweetButton(sender: DOFavoriteButton) {
@@ -157,13 +162,9 @@ class TweetCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
-
 }

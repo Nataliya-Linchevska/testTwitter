@@ -17,7 +17,7 @@ class PostTweetsViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var tvInputText: UITextView!
     
     var tweetButton: UIButton!
-    var replyToTweet: Tweet?
+//    var replyToTweet: Tweet?
     
     var charCountLabelNormalTextColor = UIColor(colorLiteralRed: 136/255.0, green: 146/255.0, blue: 158/255.0, alpha: 1)
     var tweetButtonEnabledBackgroundColor = UIColor(colorLiteralRed: 29/255.0, green: 161/255.0, blue: 243/255.0, alpha: 1)
@@ -33,9 +33,6 @@ class PostTweetsViewController: UIViewController, UITextViewDelegate {
         tvInputText.delegate = self
         lblName.text = User.currentUser?.name as? String
         lblScreenName.text = "@" + (User.currentUser?.screenName as! String)
-        
-        // для lbl для підрахунку знаків
-        let navigationBar = self.navigationController!.navigationBar
         
         let toolbarView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 50))
         tvInputText.inputAccessoryView = toolbarView
