@@ -13,8 +13,13 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     @IBOutlet weak var ivBackgroundImage: UIImageView!
     @IBOutlet weak var ivProfileImage: UIImageView!
-    
     @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var lblName: UILabel!
+    @IBOutlet weak var lblScreenName: UILabel!
+    @IBOutlet weak var lblFollowers: UILabel!
+    @IBOutlet weak var lblFollowing: UILabel!
+    
     
 
     var lastTweetId: Int?
@@ -50,6 +55,12 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func configureViewController() {
+        lblName.text = user.name as? String
+        lblScreenName.text = "@" + (user.screenName as? String)!
+        lblFollowers.text = "Followers: " + String(user.followersCount!)
+        lblFollowing.text = "Following: " + String(user.followingCount!)
+
+        
         let profileImageUrl = user.profileUrl
         let backgroundImageUrl = user.backgroundImageUrl
         ivProfileImage.setImageWith(profileImageUrl! as URL)
