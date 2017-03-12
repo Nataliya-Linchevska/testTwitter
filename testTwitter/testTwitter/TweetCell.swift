@@ -130,7 +130,6 @@ class TweetCell: UITableViewCell {
             style.lineSpacing = 5
             style.lineBreakMode = .byCharWrapping
             text.addAttribute(NSParagraphStyleAttributeName, value: style, range: NSRange(location: 0, length: text.string.characters.count))
-            
             lblTweetContents.attributedText = text
         }
     }
@@ -158,7 +157,6 @@ class TweetCell: UITableViewCell {
             lblFavoriteCount.text = String(tweet.favoritesCount) ?? ""
         }
     }
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()

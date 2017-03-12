@@ -13,11 +13,9 @@ class PostTweetsViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var ivProfileImage: UIImageView!
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var lblScreenName: UILabel!
-    @IBOutlet weak var lblReplyScreenName: UILabel!
     @IBOutlet weak var tvInputText: UITextView!
     
     var tweetButton: UIButton!
-//    var replyToTweet: Tweet?
     
     var charCountLabelNormalTextColor = UIColor(colorLiteralRed: 136/255.0, green: 146/255.0, blue: 158/255.0, alpha: 1)
     var tweetButtonEnabledBackgroundColor = UIColor(colorLiteralRed: 29/255.0, green: 161/255.0, blue: 243/255.0, alpha: 1)
@@ -45,15 +43,7 @@ class PostTweetsViewController: UIViewController, UITextViewDelegate {
         tweetButton.titleLabel?.font = UIFont.systemFont(ofSize: 14.0)
         tweetButton.setTitle("Tweet", for: .normal)
         tweetButton.addTarget(self, action: "onTweetButton", for: .touchDown)
-        toolbarView.addSubview(tweetButton)
-        
-//        if replyToTweet == nil {
-//            print("not reply")
-//            lblReplyScreenName.text = ""
-//        } else {
-//            lblReplyScreenName.isHidden = false
-//            lblReplyScreenName.text = "@" + (replyToTweet!.screenName! as String) + ":"
-//        }
+        toolbarView.addSubview(tweetButton)        
     }
     
     func onTweetButton() {

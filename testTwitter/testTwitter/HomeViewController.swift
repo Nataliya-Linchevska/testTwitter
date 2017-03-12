@@ -19,7 +19,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     let tabBarCoverView = UIView()
     var statusImageView: UIImageView?
     
-
     var lastTweetId: Int?
     var tweets: [Tweet]? {
         didSet {
@@ -39,7 +38,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         imageView.contentMode = .scaleAspectFit
         imageView.image = logo
         self.navigationItem.titleView = imageView
-        
         
         tableView.delegate = self
         tableView.dataSource = self

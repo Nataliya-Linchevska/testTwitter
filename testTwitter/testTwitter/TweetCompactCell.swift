@@ -18,7 +18,6 @@ class TweetCompactCell: TweetCell {
         super.setSelected(selected, animated: animated)
     }
 
-    
     override func tweetSetConfigure() {
         super.tweetSetConfigure()
         lblRetweetCount.text = tweet.retweetsCount > 0 ? String(tweet.retweetsCount) : ""

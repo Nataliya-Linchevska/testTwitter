@@ -43,7 +43,6 @@ class LoginViewController: UIViewController {
         buttonContainerView.alpha = 0
         titleLabel.alpha = 0
         subtitleLabel.alpha = 0
-        
         UIApplication.shared.statusBarStyle = .lightContent
     }
     

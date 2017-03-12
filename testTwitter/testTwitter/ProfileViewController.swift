@@ -19,6 +19,12 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var lblFollowers: UILabel!
     @IBOutlet weak var lblFollowing: UILabel!
     
+    @IBOutlet weak var ivProfileImageBackground2: UIImageView!
+    @IBOutlet weak var ivProfileImageBackground1: UIImageView!
+    @IBOutlet weak var shadowLineView: UIView!
+    
+    
+    
     //для збільшення картинки
     let zoomImageView = UIImageView()
     let blackBackgroundView = UIView()
@@ -45,7 +51,6 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "ProfileConfigureView"), object: nil, queue: OperationQueue.main) { (notification) in
-//            self.configureViewController()
             if User.tempUser != nil {
                 self.user = User.tempUser
             }
@@ -58,6 +63,39 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func configureViewController() {
+        // полоска тіні
+        let shadowLine = CAGradientLayer()
+        shadowLine.frame = shadowLineView.bounds
+        let topColor = UIColor(colorLiteralRed: 0, green: 0, blue: 0, alpha: 0.3).cgColor
+        let bottomColor = UIColor(white: 0, alpha: 0.0).cgColor
+        shadowLine.colors = [topColor, bottomColor]
+        shadowLine.locations = [0.0, 1.0]
+        self.shadowLineView.layer.addSublayer(shadowLine)
+        
+//         рамка навколо фото
+        let ProfileImageBackground2 = CAGradientLayer()
+        ProfileImageBackground2.frame = ivProfileImageBackground2.bounds
+        let topColor2 = UIColor(colorLiteralRed: 0, green: 0, blue: 0, alpha: 0.05).cgColor
+        let bottomColor2 = UIColor(white: 1, alpha: 1.0).cgColor
+        ProfileImageBackground2.colors = [bottomColor2, bottomColor2]
+        ProfileImageBackground2.locations = [0.0, 1.0]
+        self.ivProfileImageBackground2.layer.addSublayer(ProfileImageBackground2)
+        ivProfileImageBackground2.clipsToBounds = true // обрізати картинку по рамкі
+        ivProfileImageBackground2.layer.cornerRadius = 7 // заокруглити краї
+//        
+//        ivProfileImage.layer.shadowColor = UIColor.black.cgColor
+//        ivProfileImage.layer.shadowOpacity = 1
+//        ivProfileImage.layer.shadowOffset = CGSize.zero
+//        ivProfileImage.layer.shadowRadius = 10
+        
+        let ProfileImageBackground1 = CAGradientLayer()
+        ProfileImageBackground1.frame = ivProfileImageBackground1.bounds
+        ProfileImageBackground1.colors = [topColor2, topColor2]
+        ProfileImageBackground1.locations = [0.0, 1.0]
+        self.ivProfileImageBackground1.layer.addSublayer(ProfileImageBackground1)
+        ivProfileImageBackground1.clipsToBounds = true // обрізати картинку по рамкі
+        ivProfileImageBackground1.layer.cornerRadius = 8 // заокруглити краї
+
         lblName.text = user.name as? String
         lblScreenName.text = "@" + (user.screenName as? String)!
         lblFollowers.text = "Followers: " + String(user.followersCount!)
@@ -74,7 +112,6 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         ivProfileImage.clipsToBounds = true // обрізати картинку по рамкі
         ivProfileImage.layer.cornerRadius = 5 // заокруглити краї
-        
         UIApplication.shared.statusBarStyle = .default
         
         // лого замість заголовку
@@ -158,7 +195,6 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             if scrollView.contentOffset.y > scrollOffsetTreshold && tableView.isDragging {
                 reloadData(append: true)
             }
-            
         }
     }
     
@@ -201,7 +237,6 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
                 self.navBarCoverView.alpha = 1
                 self.tabBarCoverView.alpha = 1
             }, completion: nil)
-            
         }
     }
     
